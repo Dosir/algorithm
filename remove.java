@@ -1,4 +1,10 @@
-String removeStr(char[] srcStr, char[] removeStr){
+    /**
+     * 初始版本
+     * @param srcStr
+     * @param removeStr
+     * @return
+     */
+    static String removeStr(char[] srcStr, char[] removeStr){
         if (srcStr == null || removeStr ==  null){
             return null;
         }
@@ -34,4 +40,29 @@ String removeStr(char[] srcStr, char[] removeStr){
             }
         }
         return String.valueOf(resultStr);
+    }
+
+    /**
+     * 用到java中的内置函数实现
+     * @param srcStr
+     * @param removeStr
+     * @return
+     */
+    static String removeStr1(String srcStr, String removeStr){
+        if (srcStr == null || removeStr ==  null){
+            return null;
+        }
+        if (removeStr.length() == 0 || srcStr.length() < removeStr.length()) {
+            return String.valueOf(srcStr);
+        }
+        StringBuilder srcSb = new StringBuilder(srcStr);
+        while (true) {
+            int i = srcSb.indexOf(removeStr);
+            if (i == -1){
+                break;
+            }
+            srcSb.delete(i, removeStr.length() + i);
+        }
+
+        return srcSb.toString();
     }
