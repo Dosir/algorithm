@@ -43,7 +43,7 @@
     }
 
     /**
-     * 用到java中的内置函数实现
+     * 用到java中的内置函数实现test
      * @param srcStr
      * @param removeStr
      * @return
